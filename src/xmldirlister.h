@@ -22,6 +22,7 @@
 #include <QDir>
 #include <QDomDocument>
 #include <QFile>
+#include <QFileInfo>
 #include <QSaveFile>
 
 
@@ -76,6 +77,8 @@ public:
         if (!saveName.endsWith(".xml")) {
             saveName.append(".xml");
         }
+        saveName = QFileInfo(saveName).fileName();
+
         const QDir wdir = v2Path(baseDir);
 
         bool re = false;
@@ -106,6 +109,7 @@ public:
                 if (!fname.endsWith(".xml")) {
                     fname.append(".xml");
                 }
+                fname = QFileInfo(fname).fileName();
                 if (!QFile::remove(v2Path(baseDir).absoluteFilePath(fname))) {
                     if (res == SaveResult::SaveOk) {
                         res = SaveResult::RemoveFail;
@@ -190,4 +194,4 @@ private:
 };
 
 
-#endif // LISTER_H
+#endif // XMLDIRLISTER_H
