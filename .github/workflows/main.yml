@@ -36,8 +36,8 @@ jobs:
              qt6-sql-sqlite \
              qt6-sql-mysql  \
              qt6-declarative-tools \
+             kf6-extra-cmake-modules \
              kf6-ktexttemplate \
-             breeze6-style \
              libcairo-gobject2 \
              libpango-1_0-0 \
              file
